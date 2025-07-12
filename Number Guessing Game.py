@@ -1,6 +1,10 @@
+
 import random
+# Welcome message
 print("welcome to number guessing game")
+# Ask the user to pick difficulty
 level = input("select easy or hard:").lower()
+# Set number of attempts based on level
 if level == "easy":
   print("you have 10 attempts left to guess the number")
   attempts = 10
@@ -12,6 +16,7 @@ elif level == "hard" :
 else:
  print("invalid syntax")
  exit()
+# Secret number between 1 and 50
 number = random.randint(1,50)
 
 while attempts > 0:
@@ -19,7 +24,7 @@ while attempts > 0:
         guess = int(input("guess the number:"))
    except ValueError:
     print("please enter a valid number")
-   continue
+    continue # Skip the rest and ask again
    if guess > number:
      print("guess was too high")
      attempts -= 1
